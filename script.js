@@ -21,7 +21,7 @@ function makeGrid(size) {
 }
 
 function gridOn(e) {
-    e.target.style.backgroundColor = 'darkorange';
+    e.target.style.backgroundColor = 'darkblue';
 }
 
 function changeSize() {

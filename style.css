@@ -1,20 +1,27 @@
+.head {
+    font-size: 3rem;
+    margin: 1rem;
+}
+
 body {
     text-align: center;
 }
 
 .button {
+    font-size: 1.5rem;
     margin: 1rem;
+    
 }
 
 .grid-container {
     height: 500px;
     width: 500px;
     display: grid;
-    border: 1px solid black;
-    margin: 0rem auto;
+    border: 0.5px solid black;
+    margin: 1rem auto;
 }
 
 .cell {
-    border: 0.5px solid black;
+    border: 0.5px solid grey;
     background: lightblue;
 }
