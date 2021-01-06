@@ -26,8 +26,8 @@ function gridOn(e) {
 
 function changeSize() {
     let newSize = prompt('Enter new size');
-    if (newSize < 1 || newSize > 64) {
-        alert('Size must be between 1 and 64');
+    if (newSize < 1 || newSize > 100) {
+        alert('Size must be between 1 and 100');
         changeSize();
     } else {
         deleteGrid();
