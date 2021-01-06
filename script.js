@@ -1,5 +1,5 @@
 const gridContainer = document.querySelector('.grid-container');
-const button = document.querySelector('.button');
+const sizeButton = document.querySelector('#size-button');
 
 function deleteGrid() {
     while(gridContainer.firstChild) {
@@ -20,8 +20,17 @@ function makeGrid(size) {
     }
 }
 
+function randomRGB() {
+    var num = Math.round(0xffffff * Math.random());
+    var r = num >> 16;
+    var g = num >> 8 & 255;
+    var b = num & 255;
+    return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+}
+
 function gridOn(e) {
-    e.target.style.backgroundColor = 'darkblue';
+   let cellColor = randomRGB(); 
+    e.target.style.backgroundColor = cellColor; // Choose color here or 'cellColor' for random
 }
 
 function changeSize() {
@@ -36,8 +45,7 @@ function changeSize() {
     }
 }
 
-button.addEventListener('click', changeSize);
-
+sizeButton.addEventListener('click', changeSize);
 
 let size = 16;
 
