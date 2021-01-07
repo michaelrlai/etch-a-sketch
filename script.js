@@ -21,21 +21,31 @@ function makeGrid(size) {
 }
 
 function randomRGB() {
-    var num = Math.round(0xffffff * Math.random());
-    var r = num >> 16;
-    var g = num >> 8 & 255;
-    var b = num & 255;
-    return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+    var o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
 }
 
 function gridOn(e) {
-   let cellColor = randomRGB(); 
-    e.target.style.backgroundColor = cellColor; // Choose color here or 'cellColor' for random
-}
+    let randomColor = randomRGB();
+    e.target.style.backgroundColor = randomColor; // Choose color here or 'randomColor' for random
+
+//Uncomment for 10% opacity increment each mouseover 
+/* 
+    if (e.target.style.opacity === '') { 
+        e.target.style.opacity = 0.1;
+    } else {
+        e.target.style.opacity = parseFloat(e.target.style.opacity) + 0.2;
+    } 
+*/
+
+} 
 
 function changeSize() {
-    let newSize = prompt('Enter new size');
-    if (newSize < 1 || newSize > 100) {
+    let newSize = prompt('Enter new size');  
+    if ( isNaN(newSize) ) {
+        alert('Size must be between 1 and 100');
+        changeSize();
+    } else if (newSize < 1 || newSize > 100) {
         alert('Size must be between 1 and 100');
         changeSize();
     } else {
@@ -48,6 +58,7 @@ function changeSize() {
 sizeButton.addEventListener('click', changeSize);
 
 let size = 16;
+let opacity = 0;
 
 makeGridColumns(size);
 makeGrid(size);
