@@ -27,7 +27,7 @@ function randomRGB() {
 
 function gridOn(e) {
     let randomColor = randomRGB();
-    e.target.style.backgroundColor = randomColor; // Choose color here or 'randomColor' for random
+    e.target.style.backgroundColor = 'orange'; // Choose color here or 'randomColor' for random
 
 //Uncomment for 10% opacity increment each mouseover 
 /* 
